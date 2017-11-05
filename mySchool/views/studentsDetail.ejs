@@ -1,0 +1,41 @@
+<% include _header %>
+   <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+
+                <h3>Students Detail</h3>
+
+                <div>
+                    <label for="name">Name:</label>
+                    <%= user.name() %>
+                </div>
+                <div>
+                    <label for="department">Department:</label>
+                    <%= user.department %>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <%= user.email %>
+                </div>
+                <div>
+                    <label for="level">Level:</label>
+                    <%= user.level %>
+                </div>
+                <div>
+                    <label for="gender">Gender:</label>
+                    <%= user.gender %>
+                </div>
+                <div>
+                    <label for="sport_club">Sport Club:</label>
+                    <%= user.sportClub %>
+                </div>
+
+
+                <a href="/" class="btn btn-info"><i class="fa fa-arrow-left"></i> List</a>
+
+            </div>
+        </div>
+    </div>
+
+   <% include _footer %>

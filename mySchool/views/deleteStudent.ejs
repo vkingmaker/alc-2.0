@@ -1,0 +1,95 @@
+<% include _header %>
+   <br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <h3>Delete Students?</h3>
+                <div>
+                    <label for="name">Name:</label>
+                    <%= user.name() %>
+                </div>
+                <div>
+                    <label for="department">Department:</label>
+                    <%= user.department %>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <%= user.email %>
+                </div>
+                <div>
+                    <label for="level">Level:</label>
+                    <%= user.level %>
+                </div>
+                <div>
+                    <label for="gender">Gender:</label>
+                    <%= user.gender %>
+                </div>
+                <div>
+                    <label for="sport_club">Sport Club:</label>
+                    <%= user.sportClub %>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <form action="/deleteStudent/<%= user._id %>" method="post" class="col-md-4 offset-md-4">
+                        <div class="form-group">
+                            <label for="name" hidden>Name:</label>
+                            <input type="text" hidden class="form-control" id="name" name="username" placeholder="please enter your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label hidden for="password">Password:</label>
+                            <input hidden type="password" class="form-control" id="password" name="password" placeholder="please enter your password">
+                        </div>
+
+                        <div class="form-group">
+                            <label hidden for="department">Department:</label>
+                            <input hidden type="text" class="form-control" id="department" name="department" placeholder="please enter your department">
+                        </div>
+
+                        <div class="form-group">
+                            <label hidden for="email">Email:</label>
+                            <input hidden type="email" class="form-control" id="email" name="email" placeholder="please enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label hidden for="level">Level:</label>
+                            <input hidden type="number" class="form-control" id="level" max="500" min="100" step="100" name="level" placeholder="please enter your level">
+                        </div>
+
+
+                        <div class="form-check form-check-inline">
+                            <label hidden class="form-check-label">
+                      <input hidden class="form-check-input" type="radio" name="gender" id="male" value="male">Male
+                    </label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <label hidden class="form-check-label">
+                        <input hidden class="form-check-input" type="radio" name="gender" id="female" value="female"> Female
+                      </label>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="sportclub" hidden>Sport Club:</label>
+                            <select hidden class="form-control" name="sportClub">
+              <option value="" >Which sport club do you belong to?</option>
+              <option value="Basketball" >Basket Ball</option>
+              <option value="Football" >Football</option>
+              <option value="Cricket" >Cricket</option>
+              <option value="Table Tenis" >Table tenis</option>
+              <option value="Badminton" >Badminton</option>
+            </select>
+                        </div>
+                        <div class="align_buttons">
+                            <a href="/" class="btn btn-info back_to_list"><i class="fa fa-arrow-left"></i> List</a>
+                            <button type="submit" class="btn btn-danger delete_button"><i class="fa fa-trash"></i> Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <% include _footer %>

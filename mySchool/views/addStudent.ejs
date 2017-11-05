@@ -1,0 +1,82 @@
+<% include _header %>
+
+    <br><br>
+    <h3 style="text-align:center;">Create Student</h3>
+    <div class="container" ng-app="myApp">
+        <div class="row" ng-controller="UserController as validate">
+            <form action="/addStudent" method="post" class="col-md-4 offset-md-4" name="myForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="username" name="username" ng-model="validate.user.username" ng-maxlenght="250" ng-minlength="6" placeholder="please enter your name" required>
+                    <span ng-if="(myForm.username.$error.minlenght || 
+     myForm.username.$error.required) && myForm.username.$touched">
+     Your Name must be at least six (6) characters</span>
+
+                    <span ng-if="(myForm.username.$error.maxlenght &&  
+     myForm.username.$touched)">
+     Your Name must be at most 250 characters</span>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="please enter your password">
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <input type="text" class="form-control" id="department" name="department" ng-model="validate.user.department" ng-minlength="10" ng-maxlenght="100" placeholder="please enter your department" required>
+                    <span ng-if="(myForm.department.$error.minlenght || 
+       myForm.department.$error.required) && myForm.department.$touched">
+       Your Name must be at least ten (10) characters</span>
+                    <span ng-if="(myForm.department.$error.maxlenght && myForm.department.$touched)">
+       Your Name must be at least hundred (100) characters</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" ng-model="validate.user.email" placeholder="please enter your email" required>
+                    <span ng-if="myForm.email.$invalid && myForm.email.$touched">
+            Must be a valid Email: alc-2.0@google.com</span>
+
+                </div>
+                <div class="form-group">
+                    <label for="level">Level:</label>
+                    <input type="number" class="form-control" id="level" max="500" min="100" step="100" ng-model="validate.user.level" name="level" placeholder="please enter your level" required>
+                    <span ng-if="myForm.level.$invalid && myForm.level.$touched">
+           The level is between 100 to 500 in steps of 100</span>
+
+                </div>
+
+
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+               <input class="form-check-input" type="radio" ng-model="validate.user.gender"  name="gender" id="male" value="male">Male
+             </label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                 <input class="form-check-input" type="radio" ng-model="validate.user.gender"  name="gender" id="female" value="female"> Female
+               </label>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="sportclub">Sport Club:</label>
+                    <select class="form-control" name="sportClub" ng-model="validate.user.sportClub">
+       <option value="">Which sport club do you belong to?</option>
+       <option value="Basketball">Basket Ball</option>
+       <option value="Football">Football</option>
+       <option value="Cricket">Cricket</option>
+       <option value="Table Tenis">Table tenis</option>
+       <option value="Badminton">Badminton</option>
+     </select>
+                </div>
+                <a href="/" class="btn btn-primary"><i class="fa fa-arrow-left"></i> List</a>
+                <button ng-disabled="myForm.$invalid" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <% include _footer %>

@@ -1,0 +1,61 @@
+<% include _header %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <h1>Sign up</h1>
+                <form action="/signup" method="post">
+                    <div class="form-group">
+                        <input name="username" type="text" class="form-control" placeholder="Username" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department:</label>
+                        <input type="text" class="form-control" name="department" id="department" placeholder="please enter your department">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="please enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="level">Level:</label>
+                        <input type="number" class="form-control" name="level" id="level" step="100" max="500" min="100" placeholder="please enter your level">
+                    </div>
+
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">Male
+                                  </label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                                      <input class="form-check-input" type="radio" name="gender" id="female" value="female"> Female
+                                    </label>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="sportclub" name="">Sport Club:</label>
+                        <select class="form-control" name="sportClub" id="exampleFormControlSelect2">
+                            <option value="">Which sport club do you belong to?</option>
+                            <option value="basketball">Basket Ball</option>
+                            <option value="football">Football</option>
+                            <option value="cricket">Cricket</option>
+                            <option value="table_tenis">Table tenis</option>
+                            <option value="badminton">Badminton</option>
+                          </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <input name="password" type="password" class="form-control" placeholder="Password" required>
+                    </div>
+
+                    <input type="submit" value="Sign up" class="btn btn-primary btn-block">
+                </form>
+            </div>
+        </div>
+    </div>
+    <% include _footer %>
