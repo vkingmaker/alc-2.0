@@ -10,18 +10,28 @@ var passport = require("passport"),
 LocalStrategy = require("passport-local").Strategy;
 var session = require("express-session");
 var flash = require("connect-flash");
-var routes = require("./routes/routes");
+
+var index = require("./routes/index");
+var signUp = require("./routes/signup");
+var login = require("./routes/login");
+var logout = require("./routes/logout");
+var deleteStudent = require("./routes/deleteStudent");
+var addStudent = require("./routes/addStudent");
+var studentsDetail = require("./routes/studentsDetail");
+var edit = require("./routes/edit");
+var searchUser = require("./routes/search");
+// var routes = require("./routes/routes");
 
 var app = express();
 
-//var url = "mongodb://localhost:27017/test";
+// var url = "mongodb://localhost:27017/test";
 
 var url = "mongodb://alcadmin:alcadmin@ds243055.mlab.com:43055/alc";
 mongoose.connect(url);
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "A serious Problem has occured"));
-db.on("open", function () {
+db.once("open", function () {
     console.log("Your connection has been established");
 });
 
@@ -51,8 +61,20 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
 app.use(flash());
-app.use(routes);
+app.use("/",index);
+app.use("/signup",signUp);
+app.use("/editStudent",edit);
+app.use("/deleteStudent",deleteStudent);
+app.use("/addStudent",addStudent);
+app.use("/users",studentsDetail);
+app.use("/search",searchUser);
+app.use("/login",login);
+app.use("/logout",logout);
+
+
+// app.use(routes);
 
 
 // catch 404 and forward to error handler

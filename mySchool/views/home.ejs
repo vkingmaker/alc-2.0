@@ -1,0 +1,103 @@
+
+<% include _header %>
+<!-- 
+    <div id="stat" class="container-fluid">
+        <div class="Total stat_value pull-left">
+            <p>Total:<span>20</span></p>
+        </div>
+        <div class="Average stat_value pull-right">
+            <p>Average:<span>2</span></p>
+        </div>
+    </div> -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-sx-1 offset-md-11">
+        <a class="btn btn-sm btn-info pull-right" href="/addStudent"><i class="fa fa-plus"></i> Add</a>
+    </div>
+    </div>
+    </div> -->
+    <div id="list_table" class="d-none d-md-block">
+            <a class="btn btn-sm btn-info pull-right" href="/addStudent"><i class="fa fa-plus"></i> Add</a>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <th>FullName</th>
+                <th>Department</th>
+                <span class="hide_mobile">
+                    <th>Email</th>
+                    <th>Level</th>
+                    <th>Gender</th>
+                    <th>SportClub</th>
+               </span>
+
+                <th></th>
+                <th></th>
+                <th></th>
+            </thead>
+
+
+            <% users.forEach(function(user) { %>
+                <tr>
+                        <td><%= user.name() %></td>
+                        <td><%= user.department %></td>
+        
+                        <td><%= user.email %></td>
+                        <td><%= user.level %></td>
+                        <td><%= user.gender %></td>
+                        <td><%= user.sportClub %></td>
+        
+        
+                        <td><a href="/users/<%= user.username %>"><i class="fa fa-eye"></i></a></td>
+                        <td><a href="/editStudent/<%= user.username%>"><i class="fa fa-pencil-square-o"></i></td></td>
+                        <td><a href=""><i class="fa fa-trash"></i></a></td>
+                    </tr>
+
+                <% }) %>
+            
+        </table>
+    </div>
+
+
+    <div id="hide_mobile" class="d-md-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-1">
+                    <a class="btn btn-sm btn-info pull-right" href="/addStudent"><i class="fa fa-plus"></i> Add</a>
+                </div>
+                </div>
+        </div>
+        <table class="table table-striped table-responsive">
+            <thead>
+                <th>FullName</th>
+                <th>Department</th>
+                <th></th>
+                <th></th>
+            </thead>
+
+            <% users.forEach(function(user) { %>
+                <tr>
+                        <td><a href="/users/<%= user.username %>"><%= user.name() %></a></td>
+                        <td><%= user.department %></td>        
+
+                        <td><a href="/editStudent/<%= user._id%>"><i class="fa fa-pencil-square-o"></i></td></td>
+                        <td><a href=""><i class="fa fa-trash"></i></a></td>
+                    </tr>
+
+                <% }) %>
+
+        </table>
+    </div>
+
+    <footer>
+        <div id="footer_tag">
+            <h3>PurpleFluke<sup>&reg;</sup> Int'l</h3>
+            <div id="sep_container">
+                <div class="separator"></div>
+            </div>
+
+            <p>&copy; 2017 PurpleFluke</p>
+        </div>
+
+    </footer>
+</body>
+
+</html>

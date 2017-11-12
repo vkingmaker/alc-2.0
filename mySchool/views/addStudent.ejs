@@ -7,43 +7,43 @@
             <form action="/addStudent" method="post" class="col-md-4 offset-md-4" name="myForm" novalidate>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="username" name="username" ng-model="validate.user.username" ng-maxlenght="250" ng-minlength="6" placeholder="please enter your name" required>
+                    <input type="text" class="form-control" id="username" name="username" ng-model="validate.user.username" ng-maxlenght="250" ng-minlength="3" placeholder="Your name" required>
                     <span ng-if="(myForm.username.$error.minlenght || 
-     myForm.username.$error.required) && myForm.username.$touched">
-     Your Name must be at least six (6) characters</span>
+     myForm.username.$error.required) && myForm.username.$touched" class="error_message">
+     Your Name must be at least six (3) characters</span>
 
                     <span ng-if="(myForm.username.$error.maxlenght &&  
-     myForm.username.$touched)">
+     myForm.username.$touched)" class="error_message">
      Your Name must be at most 250 characters</span>
 
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="please enter your password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="*******">
                 </div>
 
                 <div class="form-group">
                     <label for="department">Department:</label>
-                    <input type="text" class="form-control" id="department" name="department" ng-model="validate.user.department" ng-minlength="10" ng-maxlenght="100" placeholder="please enter your department" required>
+                    <input type="text" class="form-control" id="department" name="department" ng-model="validate.user.department" ng-minlength="3" ng-maxlenght="100" placeholder="Your department" required>
                     <span ng-if="(myForm.department.$error.minlenght || 
-       myForm.department.$error.required) && myForm.department.$touched">
-       Your Name must be at least ten (10) characters</span>
-                    <span ng-if="(myForm.department.$error.maxlenght && myForm.department.$touched)">
+       myForm.department.$error.required) && myForm.department.$touched" class="error_message">
+       Your Name must be at least ten (3) characters</span>
+                    <span ng-if="(myForm.department.$error.maxlenght && myForm.department.$touched)" class="error_message">
        Your Name must be at least hundred (100) characters</span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" ng-model="validate.user.email" placeholder="please enter your email" required>
-                    <span ng-if="myForm.email.$invalid && myForm.email.$touched">
+                    <input type="email" class="form-control" id="email" name="email" ng-model="validate.user.email" placeholder="alc2.0@gmail.com" required>
+                    <span ng-if="myForm.email.$invalid && myForm.email.$touched" class="error_message">
             Must be a valid Email: alc-2.0@google.com</span>
 
                 </div>
                 <div class="form-group">
                     <label for="level">Level:</label>
-                    <input type="number" class="form-control" id="level" max="500" min="100" step="100" ng-model="validate.user.level" name="level" placeholder="please enter your level" required>
-                    <span ng-if="myForm.level.$invalid && myForm.level.$touched">
+                    <input type="number" class="form-control" id="level" max="500" min="100" step="100" ng-model="validate.user.level" name="level" placeholder="Your current Level" required>
+                    <span ng-if="myForm.level.$invalid && myForm.level.$touched" class="error_message">
            The level is between 100 to 500 in steps of 100</span>
 
                 </div>
@@ -66,11 +66,28 @@
                     <label for="sportclub">Sport Club:</label>
                     <select class="form-control" name="sportClub" ng-model="validate.user.sportClub">
        <option value="">Which sport club do you belong to?</option>
-       <option value="Basketball">Basket Ball</option>
-       <option value="Football">Football</option>
-       <option value="Cricket">Cricket</option>
-       <option value="Table Tenis">Table tenis</option>
-       <option value="Badminton">Badminton</option>
+       <optgroup label="Sports">
+        <option value="basketball">Basket Ball</option>
+        <option value="football">Football</option>
+        <option value="cricket">Cricket</option>
+        <option value="table_tenis">Table tenis</option>
+        <option value="badminton">Badminton</option>
+</optgroup>
+<optgroup label="religious">
+        <option value="christian">Scripture Union</option>
+        <option value="awana">AWANA</option>
+        <option value="islam">Islamic Networks Group</option>
+</optgroup>
+<optgroup label="academic">
+<option value="JBL">Junior Business Leaders</option> 
+<option value="JETS">JETS Club</option>
+<option value="LDS">Literary and Debating Society</option>
+<option value="agric">The Young Agriculturist</option>
+<option value="arts">Arts Club</option>
+<option value="HomeMakers">The Home Makers Club</option>
+<option value="music">Music and Arts</option>
+</optgroup>
+<option value="others">Others</option>
      </select>
                 </div>
                 <a href="/" class="btn btn-primary"><i class="fa fa-arrow-left"></i> List</a>

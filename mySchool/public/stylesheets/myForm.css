@@ -35,6 +35,10 @@
         padding-bottom: 4em;
     }
 
+    .error_message{
+        color:red;
+    }
+
     #footer_tag >h3 ,#sep_container{
         position:relative;
         top:30%;
@@ -42,6 +46,10 @@
     }
     label{
         font-weight:bold;
+        color:rgb(103, 168, 234)
+    }
+    [type="radio"]:checked + label{
+        color:black !important;
     }
 
 @media(min-width:320px) and (max-width:768px){

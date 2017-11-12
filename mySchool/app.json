@@ -1,0 +1,6 @@
+{
+  "name": "my-school",
+  "description": "A student management web based application that is able to create,read,update and delete student resources",
+  "repository": "https://github.com/vkingmaker/alc-2.0.git",
+  "keywords": ["node", "express", "heroku","Andela","Google","Udemy"]
+}

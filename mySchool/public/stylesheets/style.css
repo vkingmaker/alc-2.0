@@ -1,0 +1,422 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 80%;
+    margin: 0 auto;
+    min-width:300px;
+}
+
+
+
+
+/*======================Navigation bar and brand name styling==================*/
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90px;
+    padding-top: 2em;
+    background-color: #06588d;
+}
+
+.schools_name h3 {
+    color: 05324f;
+    font-size: 1.9em;
+    margin-top: -12px;
+}
+
+h3 > sup {
+    font-size: 0.5em;
+}
+
+nav ul {
+    list-style: none;
+    margin-right: 2em;
+}
+
+ul li {
+
+    display: inline-block;
+    padding: 0.9em;
+    margin-top: -10px;
+}
+
+a {
+    text-decoration: none;
+    color: #99a7af;
+}
+
+a:hover {
+    border-bottom: 2px solid white;
+    padding-bottom: 1em;
+    position: relative;
+    top: 2px;
+}
+
+
+
+
+/*==============End of Navigation bar and brand name styling=================*/
+
+
+/*==============Status styling=================*/
+
+#stat {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    padding: 2em;
+    background-color: seagreen;
+    align-items: center;
+}
+
+.stat_value {
+    font-size: 1.5em;
+}
+
+
+
+
+
+/*==============End of Status styling=================*/
+
+
+/*====================Add Button Styling==============*/
+
+#add_button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+ #add_button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+    position: relative;
+    left: -5.5em;
+} 
+
+#add_button > p {
+    padding-top: 0.4em;
+    text-align: center; 
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: lightblue;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+
+
+
+/*====================End of Add Button Styling==============*/
+
+
+/*==============table styling=================*/
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 7px;
+}
+
+tr:nth-child(even) {
+    background-color: #99a7af;
+}
+
+#list_table {
+   width:100%;
+    margin: 20px 0;
+}
+
+
+
+
+/*==============End of table styling=================*/
+
+
+/*==============Create student styling=====================*/
+
+#reg_form {
+    display: flex;
+    justify-content: center;
+    /*    margin-top: 40px;*/
+    margin-bottom: 120px;
+}
+
+.surround_form {
+    background-color: azure;
+}
+
+form {
+    padding: 15px;
+}
+
+.reg_form_data {
+    margin-bottom: 0.5em;
+}
+
+.gender_button{
+    display:inline-flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-left:2.7em;
+    margin-top:0.5em;
+}
+
+.gender_button > .reg_form_data{
+    display:flex;
+    width:80px;
+    justify-content: space-between;
+}
+.gender_button :nth-child(2){
+    margin-left:20px;
+}
+
+#gender_label{
+    display:inline-block;
+}
+.gender_label{
+ width:30px;   
+}
+
+.gender_button > label{
+    width:20px;    
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+}
+
+.text_input {
+    height: 2.5em;
+    width: 250px;
+    border: 0.5px;
+    border-color: black;
+    border-radius: 5px;
+    border-style: solid;
+    padding: 0.2em;
+    margin-top: 15px;
+}
+
+.navigation_and_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.navigation_and_button > button {
+    margin-left: 90px;
+}
+
+.nav_button {
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    border-style: none;
+    background-color: blueviolet;
+    font-size: small;
+    text-align: center;
+}
+
+
+
+
+/*==============End Create student styling=================*/
+
+
+/*==============Students Detail/Delete styling=================*/
+
+.center_it {
+    width: 35%;
+    height: 330px;
+    margin: 0 auto;
+    background-color: aliceblue;
+}
+
+.student_data {
+    padding: 20px;
+}
+
+.students_detail div > h3 {
+    padding: 15px 30px;
+}
+
+.students_detail {
+    display: flex;
+    margin: 50px 0;
+}
+
+.students_detail div div > p {
+    margin-bottom: 15px;
+}
+
+.detail_label {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 100px;
+}
+
+.delete_button {
+    background-color: firebrick;
+}
+
+.nav_with_delete_button {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+
+/*==============End Students Detail styling=================*/
+
+
+/*==============Footer styling=================*/
+
+footer {
+    height: 250px;
+    background-color: rgba(0, 0, 0, .83);
+    color: #fff;
+    text-align: center;
+}
+
+#footer_tag {
+    padding-top: 6em;
+}
+
+#footer_tag h3 {
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    padding-bottom: 0.5em;
+}
+
+
+#sep_container {
+    display: flex;
+    justify-content: center;
+}
+
+.separator {
+    width: 200px;
+    border-top: 2px #fff solid;
+    padding-bottom: 4em;
+}
+
+
+
+
+/*==============End of Footer styling=================*/
+
+.space-within {
+    padding: 1em;
+}
+
+.quater {
+  
+    width: 33%;
+    display: inline-block;
+    background-color: tomato;
+    margin-bottom: 2px;
+}
+
+.clearfix {
+    display: table;
+    content: "";
+}
+#hide_mobile{
+  display:none;
+}
+.fixed{
+	display:none;
+}
+.add-button{
+	display:none;
+}
+
+/*=======================Media Queries===========================*/
+
+/* @media(max-width:900px) { */
+    @media(max-width:768px) {
+    body {
+    width: 100%;
+}
+    .quater {
+        width: 100%;
+        display: block;
+    }
+    #list_table{
+        display:none;
+    }
+    #hide_mobile{
+        display:block;
+        width:100%;
+    }
+    table {
+    width: 100%;
+    }   
+}
+
+@media(max-width:414px){
+    
+
+    .text_input{
+        width:100%;
+    }
+    form{
+        padding:0;
+    }
+    .navigation_and_button > button{
+        margin-left:0;
+    }
+    #reg_form{
+        display:block;
+        width:100%;
+    }
+    .navigation_and_button{
+        width:95%;
+        margin:0 auto;
+    }
+    .students_detail,
+    nav{
+        display:block;
+        width:100%;
+    }
+
+    .student_data{
+       display:block;
+        width:100%;
+        height:1px;
+    }
+    .detail_label{
+        width:100%;
+    }
+    .center_it{
+        width:100%;
+        height:450px;
+    }
+}
+
+
+/*=========================End of Media Queries==================*/
+

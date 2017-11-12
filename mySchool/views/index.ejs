@@ -1,17 +1,31 @@
 <% include _header %>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form action="/search" method="get">
+                <div class="input-group input-group-lg">
+               <input type="text" class="form-control" name="username" id="username" placeholder="Enter students name" aria-describedby="sizing-addon1">
+               <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <br><br>
     <div id="list_table" class="d-none d-md-block">
-        <a class="btn btn-sm btn-info pull-right" href="/addStudent"><i class="fa fa-plus"></i> Add</a>
+            <%if(currentUser.name()=="admin"){%>
+        <a class="btn btn-sm btn-info pull-right add_button" href="/addStudent"><i class="fa fa-plus"></i> Add</a>
+        <%}%>
         <table class="table table-responsive table-striped">
             <thead>
                 <th>FullName</th>
                 <th>Department</th>
-                <span class="hide_mobile">
+                <!-- <span class="hide_mobile"> -->
                     <th>Email</th>
                     <th>Level</th>
                     <th>Gender</th>
                     <th>SportClub</th>
-               </span>
+               <!-- </span> -->
 
                 <th></th>
                 <th></th>
@@ -20,6 +34,7 @@
 
 
             <% users.forEach(function(user) { %>
+                <%if(user.name() !== "admin"){%>
                 <tr>
                     <td>
                         <%= user.name() %>
@@ -42,10 +57,14 @@
                     </td>
 
 
-                    <td><a href="/users/<%= user.username %>"><i class="fa fa-eye"></i></a></td>
-                    <td><a href="/editStudent/<%= user.username%>"><i class="fa fa-pencil-square-o"></i></td>
-                        <td><a href="/deleteStudent/<%= user.username%>"><i class="fa fa-trash"></i></a></td>
+                    <td><a href="/users/<%= user.username %>"><i class="fa fa-eye" title="View student's detail"></i></a></td>
+                    <%if(currentUser.name()=="admin"){%>
+                    <!-- <td><a href="/editStudent/<%= user.username%>"><i class="fa fa-pencil-square-o" title="Edit student's detail"></i></td> -->
+                        <td><a href="/editStudent/<%= user._id%>"><i class="fa fa-pencil-square-o" title="Edit student's detail"></i></td>
+                    <td><a href="/deleteStudent/<%= user.username%>"><i class="fa fa-trash" title="Delete student's detail"></i></a></td>
+                    <%}%>
                 </tr>
+                <%}%>
 
                 <% }) %>
 
@@ -56,9 +75,9 @@
     <div id="hide_mobile" class="d-md-none">
         <div class="container">
             <div class="row">
-                <div class="col-xs-1">
+                <!-- <div class="col-xs-1">
                     <a class="btn btn-sm btn-info pull-right" href="/addStudent"><i class="fa fa-plus"></i> Add</a>
-                </div>
+                </div> -->
             </div>
         </div>
         <table class="table table-striped table-responsive">
@@ -70,7 +89,9 @@
             </thead>
 
             <% users.forEach(function(user) { %>
+               
                 <tr>
+                 <!-- <a href="/users/<%= user.username %>"> -->
                     <td>
                         <a href="/users/<%= user.username %>">
                             <%= user.name() %>
@@ -79,14 +100,21 @@
                     <td>
                         <%= user.department %>
                     </td>
-
-                    <td><a href="/editStudent/<%= user.username%>"><i class="fa fa-pencil-square-o"></i></td></td>
-                        <td><a href="/deleteStudent/<%= user.username%>"><i class="fa fa-trash"></i></a></td>
+                <!-- </a> -->
+                <%if(currentUser.name()=="admin"){%>
+                    <!-- <td><a href="/users/<%= user.username %>"><i class="fa fa-eye" title="View student's detail"></i></a></td> -->
+                     <td><a href="/editStudent/<%= user.username%>"><i class="fa fa-pencil-square-o"></i></td></td>
+                    <td><a href="/deleteStudent/<%= user.username%>"><i class="fa fa-trash"></i></a></td>
+                    <% } %>
                 </tr>
 
                 <% }) %>
 
         </table>
     </div>
-
+    <%if(currentUser.name()=="admin"){%>
+     <div class="fixed">
+        <p><a  href="/addStudent">+</a></p>
+    </div>
+    <% } %>
     <% include _footer %>

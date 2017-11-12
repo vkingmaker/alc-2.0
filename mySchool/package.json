@@ -1,7 +1,10 @@
 {
-  "name": "myschool",
+  "name": "my-school",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "6.9.4"
+  },
   "scripts": {
     "start": "node ./bin/www"
   },
@@ -18,5 +21,18 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.4.0"
-  }
+  },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/vkingmaker/alc-2.0.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "Udemy",
+    "Andela",
+    "Google"
+  ],
+  "license": "MIT"
 }

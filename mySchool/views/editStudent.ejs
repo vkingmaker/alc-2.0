@@ -3,7 +3,7 @@
     <h3 style="text-align:center;">Update Student</h3>
     <div class="container">
         <div class="row">
-            <form action="/editStudent/<%= user._username%>" method="post" class="col-md-4 offset-md-4">
+            <form action="/editStudent/<%= user._id %>" method="post" class="col-md-4 offset-md-4">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="username" value="<%= user.username || '' %>" placeholder="please enter your name">
@@ -27,11 +27,28 @@
                     <label for="sportclub">Sport Club:</label>
                     <select class="form-control" name="sportClub">
        <option value=""><%= user.sportClub || 'Which sport club do you belong to?' %></option>
-       <option value="Basketball">Basket Ball</option>
-       <option value="Football">Football</option>
-       <option value="Cricket">Cricket</option>
-       <option value="Table Tenis">Table tenis</option>
-       <option value="Badminton">Badminton</option>
+       <optgroup label="Sports">
+        <option value="basketball">Basket Ball</option>
+        <option value="football">Football</option>
+        <option value="cricket">Cricket</option>
+        <option value="table_tenis">Table tenis</option>
+        <option value="badminton">Badminton</option>
+</optgroup>
+<optgroup label="religious">
+        <option value="christian">Scripture Union</option>
+        <option value="awana">AWANA</option>
+        <option value="islam">Islamic Networks Group</option>
+</optgroup>
+<optgroup label="academic">
+<option value="JBL">Junior Business Leaders</option> 
+<option value="JETS">JETS Club</option>
+<option value="LDS">Literary and Debating Society</option>
+<option value="agric">The Young Agriculturist</option>
+<option value="arts">Arts Club</option>
+<option value="HomeMakers">The Home Makers Club</option>
+<option value="music">Music and Arts</option>
+</optgroup>
+<option value="others">Others</option>
      </select>
                 </div>
 
